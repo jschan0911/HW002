@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -44,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button3).setOnLongClickListener(mLongClickListener);
 
 //        imageView = findViewById(R.id.apple);
-        ImageView img =(ImageView)findViewById(R.id.apple);
+        ImageView img =findViewById(R.id.apple);
         img.setVisibility(View.INVISIBLE);
     }
+
 
     Button.OnClickListener mClickListener = new Button.OnClickListener(){
             public void onClick (View v){
@@ -58,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
                         mPool.play(mSoundFile, 1, 1, 0, 0, 1);
                         break;
                     case R.id.button3:
-                        Toast.makeText(MainActivity.this, "버튼 이름 바꾸는 곳", Toast.LENGTH_LONG).show();
+                        Button text1 = (Button) findViewById(R.id.button3);
+                        text1.setText("ON");
                         break;
 
                 }
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.button2:
 //                    imageView.setImageResource(R.drawable.apple);
-                    ImageView img =(ImageView)findViewById(R.id.apple);
+                    ImageView img =findViewById(R.id.apple);
                     if(img.getVisibility()==View.VISIBLE){
                         img.setVisibility(View.INVISIBLE);
                     }else {
@@ -85,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     break;
                 case R.id.button3:
-                    Toast.makeText(MainActivity.this, "버튼 이름 바꾸는 곳", Toast.LENGTH_LONG).show();
+                    Button text1 = (Button) findViewById(R.id.button3);
+                    text1.setText("OFF");
                     break;
             }
                 return false;
